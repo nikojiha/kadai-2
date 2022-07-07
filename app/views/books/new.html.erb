@@ -1,2 +1,24 @@
-<h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+<%= form_with model: @book, url: '/books', method: :post do |f| %>
+
+<h1>New book</h1>
+  <form class="new_book" id="new_book" action="/books" accept-charset="UTF-8" method="post">
+    <input name="utf8" type="hidden" value="✓">
+    <input type="hidden" name="authenticity_token" value="qxjJlkrS/ehwjowJ+ncRqfUZ02Mc7qGgV0m9Hcr+AfR25SDwojIIBjYBrSoBHoqBN3e05m8CJ7z2Dc+/XNr/2A==">
+
+  <div class="field">
+    <label for="book_title">Title</label>
+    <input class="book_title" type="text" name="book[title]" id="book_title">
+  </div>
+
+  <div class="field">
+    <label for="book_body">Body</label>
+    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
+  </div>
+
+  <div class="actions">
+    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+  </div>
+</form>
+
+<% end %>
+
